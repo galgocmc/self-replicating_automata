@@ -16,7 +16,11 @@ As each loop progress, it will 'reproduce' more loops around it in a countercloc
 >Dead loop (located in center)
 ---
 
-
+More information about Langton's Loops as well as implementation details can be found within the info tab of the NetLogo file. The processing file contains a visual implementation of LL that runs much quicker than the NetLogo version, as the NL version is rather slow.
 
 ## Sources
-[Original Netlogo Code](ccl.northwestern.edu/netlogo/community/Loop%20de%20Langton%202.nlogo). *The reader should note that this implmentation is incorrect. Specifically, the initial state of the model has one incorrect cell, which was fixed for the implmentation in this repository.*
+[Original Netlogo Code](ccl.northwestern.edu/netlogo/community/Loop%20de%20Langton%202.nlogo). *Note that this implmentation is incorrect. Specifically, the initial state of the model has one incorrect cell, which was fixed for the implmentation in this repository.*
+
+[Langton's Article (1984)](http://deepblue.lib.umich.edu/bitstream/handle/2027.42/24968/0000395.pdf?sequence=1) *Original proposition of Langton's Loops and discussion of self-replicating automata*
+
+[Langton's Loops Wikipedia](https://en.wikipedia.org/wiki/Langton%27s_loops) *Not particularily useful but contains pictures of LL and information about additional self-replicating automata*
