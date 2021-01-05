@@ -629,8 +629,8 @@ end
 GRAPHICS-WINDOW
 210
 9
-752
-552
+750
+550
 -1
 -1
 7.0
@@ -731,7 +731,7 @@ Typically, a cell's state corresponds to its colour. Langton's Loops utilises ei
 
 ## Transition Function
 
-The rules that the agents use to create the global behavior of the model are represented in the [transition table](https://github.com/galgocmc/langtons_loops/blob/main/transition_tables/langtons_loops.table) for a total of 219 rules, based on the state of each given cell and the states of its four neighbours.
+The rules that the agents use to create the global behavior of the model are represented in the [transition table](https://github.com/galgocmc/self-replicating_automata/blob/main/langtons_loops/transition_function.table) for a total of 219 rules, based on the state of each given cell and the states of its four neighbours.
 
 The function in its condensed form consists of lines of 6 single-digit numbers. The first number refers to the state of the center cell, the next four numbers refer to the states of the center's neighbours (in the order of north, east, south, west), and the last number refers to the function output.
 
