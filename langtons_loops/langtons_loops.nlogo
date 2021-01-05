@@ -746,9 +746,9 @@ This tells us that if a center cell has a state of `4`, and its neighbours have 
   5</pre>
 
 
-However, life is not that simple. The transition function uses a `rotate4` symmetry which means the function only considers one of four possibilities. Thus all four may need to be checked for the transition function to produce an output.
+However, life is not that simple. The neighbourhood uses a rotational symmetry which means the transition function only considers one of four possibilities. Thus all four may need to be checked for the transition function to produce an output.
 
-To understand the `rotate4` symmetry, consider the following example:
+To understand the rotational symmetry, consider the following example:
 A given cell with state 0 has four neighbours, `[1, 2, 3, 4]`, in the order north, east, south, west.
 Then, we must check four possible inputs to the transition function: 
 
