@@ -1,6 +1,6 @@
 class cell {
   int x, y;
-  private int previous_state, current_state;
+  int previous_state, current_state;
   color c;
 
   public cell(int x, int y) {
@@ -21,10 +21,6 @@ class cell {
     c = get_colour(current_state);
   }
 
-  int get_previous_state() {
-    return previous_state;
-  }
-
   void set_current_state(int state) {
     current_state = state;
     c = get_colour(state);
@@ -33,10 +29,6 @@ class cell {
 
   void set_previous_state(int state) {
     previous_state = state;
-  }
-
-  int get_current_state() {
-    return current_state;
   }
 
   private color get_colour(int state) {
@@ -48,5 +40,18 @@ class cell {
     if (state == 5) return color(255, 105, 180); // pink
     if (state == 6) return color(255, 255, 255); // white
     return color(0, 255, 255); // if state=7 cyan
+  }
+
+  public String toString() {
+    return "" + current_state;
+  }
+
+  public cell copy() {
+    cell new_cell = new cell(x, y);
+    new_cell.current_state = current_state;
+    new_cell.previous_state = previous_state;
+    new_cell.c = c;
+
+    return new_cell;
   }
 }

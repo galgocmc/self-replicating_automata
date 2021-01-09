@@ -1,7 +1,9 @@
+import java.util.*;
 // ##### key mapping for controls #####
 // TAB    resets the program back to the beginning
 // SPACE  pauses/unpauses the program
 // ENTER  advances the model one iteration, only works whilst paused
+// t      toggles turbo mode- runs much faster, but makes it hard to see each individual iteration
 
 // 2d array to hold cell matrix
 cell[][] cells;
@@ -13,22 +15,20 @@ int area_width = 120, area_height = 100;
 
 // control variables
 boolean pause = false;
+boolean turbo = true;
 
-// time offset for when the model starts running, measured in frames
-// processing defaults to run at 60fps, so (offset/60.0) is how many
-// seconds are waited before the program begins running
-int offset = 90;
+int offset = 0;
 
 void settings() {
   size(displayWidth-75, displayHeight-75);
 }
 
-void setup() { 
+void setup() {
   create_cells();
   set_initial_state();
   backgrnd();
 
-  display_cells();
+  display_cells(false);
 }
 
 // paints the nice gradient for the background
@@ -87,13 +87,15 @@ void set_initial_state() {
   }
 }
 
-void display_cells() {
+void display_cells(boolean turbo_on) {
   for (int i = 0; i < cells.length; i++) {
     for (int j = 0; j < cells[i].length; j++) {
       cell c = cells[i][j];
 
-      fill(c.c);
-      rect(c.x, c.y, cell_width, cell_width);
+      if (c.current_state != c.previous_state || !turbo_on) {
+        fill(c.c);
+        rect(c.x, c.y, cell_width, cell_width);
+      }
     }
   }
 }
@@ -105,11 +107,11 @@ void transition() {
     for (int j = 1; j < cells[i].length - 1; j++) {
 
       // states of sourrounding cells in VN neighbourhood
-      int center = cells[i][j].get_previous_state();
-      int north = cells[i][j-1].get_previous_state();
-      int east = cells[i+1][j].get_previous_state();
-      int south = cells[i][j+1].get_previous_state();
-      int west = cells[i-1][j].get_previous_state();    
+      int center = cells[i][j].previous_state;
+      int north = cells[i][j-1].previous_state;
+      int east = cells[i+1][j].previous_state;
+      int south = cells[i][j+1].previous_state;
+      int west = cells[i-1][j].previous_state;    
 
       int new_state = rule_table(center, north, east, south, west);
 
@@ -130,6 +132,9 @@ void transition() {
             new_state = rule_table(center, east, south, west, north);
             if (new_state != -1) {
               cells[i][j].set_current_state(new_state);
+            } else { 
+              // if we are at an edge, set to red to avoid screwing up the whole thing
+              cells[i][j].set_current_state(2);
             }
           }
         }
@@ -137,36 +142,67 @@ void transition() {
     }
   }
 
-  // Have to put here to force synchronicity
-  for (int i = 1; i < cells.length - 1; i++) {
-    for (int j = 1; j < cells[i].length - 1; j++) {
-      cells[i][j].set_previous_state(cells[i][j].get_current_state());
+  if (!turbo) {
+    // Have to put here to force synchronicity
+    for (int i = 1; i < cells.length - 1; i++) {
+      for (int j = 1; j < cells[i].length - 1; j++) {
+        cells[i][j].set_previous_state(cells[i][j].current_state);
+      }
     }
   }
 }
 
 void draw() {
   if (!pause && offset <= 0) {
-    display_cells();
-    transition();
-  }
+    display_cells(turbo);
 
-  if (offset > 0)
+    if (turbo) {
+      // Have to put here to force synchronicity
+      for (int i = 1; i < cells.length - 1; i++) {
+        for (int j = 1; j < cells[i].length - 1; j++) {
+          cells[i][j].set_previous_state(cells[i][j].current_state);
+        }
+      }
+    }
+    transition();
+  } 
+
+  if (offset > 0) {
     offset--;
+  }
 }
 
 void keyPressed() {
   // transitions by one increment, only works when paused
   if (pause && key == ENTER) {
+    display_cells(false);
+
+    for (int i = 1; i < cells.length - 1; i++) {
+      for (int j = 1; j < cells[i].length - 1; j++) {
+        cells[i][j].set_previous_state(cells[i][j].current_state);
+      }
+    }
+
     transition();
-    display_cells();
   }
 
   // resets back to initial state
   if (key == TAB) {
     create_cells();
     set_initial_state();
-    display_cells();
+
+    display_cells(false);
+    transition();
+  }
+
+  // toggle turbo
+  if (key == 't') {
+    turbo = !turbo;
+
+    // still works correctly but some cells may show up as wrong colour, fix here
+    // don't during pause however, as this will make everything jump forward
+    if (!pause)
+      display_cells(false);
   }
 
   // pauses/unpauses
@@ -175,9 +211,9 @@ void keyPressed() {
   }
 }
 
-
 // very ugly, long rule table for transition function, optimised with many nested ifs
 // last function in file so reader does not have to scroll down several hundred lines
+// tested against a hashmap implementation and was found to be 2-3x faster than hashmap
 int rule_table(int center, int north, int east, int south, int west) {
   if (center == 0 ) {
     if (north == 0) {
