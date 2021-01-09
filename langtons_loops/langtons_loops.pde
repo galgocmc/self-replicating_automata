@@ -199,8 +199,8 @@ void keyPressed() {
   if (key == 't') {
     turbo = !turbo;
 
-    // still works correctly but some cells may show up as wrong colour, fix here
-    // don't during pause however, as this will make everything jump forward
+    // if switching modes while not paused, some cells may show up as wrong colour
+    // program still works as intended, just has some wrong coloured cells
     if (!pause)
       display_cells(false);
   }
