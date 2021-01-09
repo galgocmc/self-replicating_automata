@@ -38,8 +38,10 @@ void setup() {
 void create_transition_function() {
   trans_table = new HashMap<String, Integer>();
   try {
-    String filename = "/Users/michaelgalgoczy/Documents/self-replicating_automata/evoloops";
-    filename += "/evoloops_processing/transition_function.table";
+    // I have no idea why, but processing use my home directory as the working directory,
+    // not the actual directory in which the .pde file is located...
+    String filename = "Documents/self-replicating_automata";
+    filename += "/evoloops/transition_function.table";
 
     Scanner scan = new Scanner(new File(filename));
     while (scan.hasNextLine()) {
@@ -163,9 +165,6 @@ void transition() {
             new_state = rule_table(center, east, south, west, north);
             if (new_state != -1) {
               cells[i][j].set_current_state(new_state);
-            } else { 
-              // if we are at an edge, set to red to avoid screwing up the whole thing
-              //cells[i][j].set_current_state(2);
             }
           }
         }
@@ -230,8 +229,8 @@ void keyPressed() {
   if (key == 't') {
     turbo = !turbo;
 
-    // still works correctly but some cells may show up as wrong colour, fix here
-    // don't during pause however, as this will make everything jump forward
+    // if switching modes while not paused, some cells may show up as wrong colour
+    // program still works as intended, just has some wrong coloured cells
     if (!pause)
       display_cells(false);
   }
