@@ -1,5 +1,5 @@
 # Langton's Loops
-Langton's loops is a self-relicating [cellular automaton](https://en.wikipedia.org/wiki/Cellular_automaton) created by [Christopher Langton](https://en.wikipedia.org/wiki/Christopher_Langton) in 1984. Cells contain genetic material which flows through each loop, eventually breaking off to form a new loop, hence the term 'self-replicating'. Although Langton was not the first to propose a self-replicating automaton, his was was much simpler than those proposed before his (most notably von Neumann's [Universal Constructor](https://en.wikipedia.org/wiki/Von_Neumann_universal_constructor), which consisted of 29 states (whereas Langton's consists of only 8 states)).
+Langton's loops is a self-relicating [cellular automaton](https://en.wikipedia.org/wiki/Cellular_automaton) created by [Christopher Langton](https://en.wikipedia.org/wiki/Christopher_Langton) in 1984. Cells contain genetic material which flows through each loop, eventually breaking off to form a new loop, hence the term 'self-replicating'. Although Langton was not the first to propose a self-replicating automaton, his was was much simpler than those proposed before his, consisting of just 8 states. Also, Langton's Loops are quite small, consisiting of just 86 cells, as compared to Von Neumann's UC, which consisted of 130,622 cells and Codd's, which takes 283,126,588 cells!
 
 ## Initial State
 Langton's loops begins in its initial state, pictured below, in which a single loop and partial extension arm exist. From the initial state, an arm will begin to extend out to the right and will eventually form a second, completely independent loop. 
@@ -23,8 +23,4 @@ More information about Langton's Loops as well as implementation details can be 
 
 [Langton's Article (1984)](http://deepblue.lib.umich.edu/bitstream/handle/2027.42/24968/0000395.pdf?sequence=1) *Original proposition of Langton's Loops and discussion of self-replicating automata*
 
-<a href='https://en.wikipedia.org/wiki/Langton%27s_loops' target='_blank'>Langton's Loops Wikipedia</a> *Not particularily useful but contains pictures of LL and information about additional self-replicating automata*
-
-<a href='https://www.diga.me.uk/LangtonLoops.html' target='_blank'>Additional Help Site</a> *Old website with some very useful information about LL that ultimately made this project possible. Also contains an implementation of LL in LB for the six people in the world who use LB...*
-
-<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful as it contains rule tables for all types of loops. This project couldn't have happened without these rule tables*
+<a href='https://www.diga.me.uk/LangtonLoops.html' target='_blank'>Additional Help Site</a> *Old website with some very useful information about LL and cellular automata that ultimately made this project possible. Also contains an implementation of LL in LB for the six people in the world who use LB...*

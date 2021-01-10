@@ -12,7 +12,3 @@ Due to its larger size, Evoloops requires much more space to move than Langton's
 ## Sources
 
 [Original Proposition (1999)](https://www.researchgate.net/profile/Hiroki_Sayama/publication/229501529_Spontaneous_evolution_of_self-reproducing_loops_on_cellular_automata/links/02e7e52b60df20808a000000.pdf) *Journal Article proposing Evoloops. Contains some pretty hefty analysis and discussion*
-
-[Langton's Loops Wikipedia](https://en.wikipedia.org/wiki/Langton%27s_loops) *Brief mention of Evoloops in the table*
-
-<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful. It contains rule tables for all types of loops. This project couldn't have happened without these rule tables*
