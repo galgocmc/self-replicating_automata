@@ -12,9 +12,9 @@ HashMap<String, Integer> trans_table;
 
 
 // width of individual cells in the cellular automata
-int cell_width = 6;
+int cell_width = 20;
 // how many cells wide, how many cells tall
-int area_width = 175, area_height = 140;
+int area_width = 30, area_height = 30;
 
 // control variables
 boolean pause = false;
