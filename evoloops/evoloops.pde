@@ -10,17 +10,14 @@ import java.io.*;
 cell[][] cells;
 HashMap<String, Integer> trans_table;
 
-
 // width of individual cells in the cellular automata
-int cell_width = 20;
+int cell_width = 6;
 // how many cells wide, how many cells tall
-int area_width = 30, area_height = 30;
+int area_width = 225, area_height = 140;
 
 // control variables
 boolean pause = false;
 boolean turbo = true;
-
-int offset = 0;
 
 void settings() {
   size(displayWidth-75, displayHeight-75);
@@ -38,7 +35,7 @@ void setup() {
 void create_transition_function() {
   trans_table = new HashMap<String, Integer>();
   try {
-    // I have no idea why, but processing use my home directory as the working directory,
+    // I have no idea why, but processing uses my home directory as the working directory,
     // not the actual directory in which the .pde file is located...
     String filename = "Documents/self-replicating_automata";
     filename += "/evoloops/transition_function.table";
@@ -151,7 +148,7 @@ void transition() {
       if (new_state != -1)
         cells[i][j].set_current_state(new_state);
       else {
-        // rotate 4 symmetries
+        // rotational symmetry
         new_state = rule_table(center, west, north, east, south);
         if (new_state != -1) {
           cells[i][j].set_current_state(new_state);
@@ -183,7 +180,7 @@ void transition() {
 }
 
 void draw() {
-  if (!pause && offset <= 0) {
+  if (!pause) {
     display_cells(turbo);
 
     if (turbo) {
@@ -195,10 +192,6 @@ void draw() {
       }
     }
     transition();
-  } 
-
-  if (offset > 0) {
-    offset--;
   }
 }
 
