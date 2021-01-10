@@ -3,7 +3,7 @@ Evoloops is an extension of SDSR Loops capable of evolution. Although the system
 
 ## Initial State
 
-Evoloops begins in a similar initial state to Langton's Loops, but with a larger loop and no extension arm
+Evoloops begins in a similar initial state to Langton's Loops, but with a larger loop and no extension arm.
 Due to its larger size, Evoloops requires much more space to move than Langton's Loops. However, adding extra space really slows down computations and makes the loops harder to see. Currently, this does not run very well on my computer.
 
 ![Evoloops initial state](images/initial_state.png) 
