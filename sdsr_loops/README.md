@@ -57,4 +57,4 @@ Unfortunately, there isn't much information available online for SDSR loops apar
 
 <a href='https://en.wikipedia.org/wiki/Langton%27s_loops' target='_blank'>Langton's Loops Wikipedia</a> *Brief mention of SDSR Loops in the table*
 
-<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful. It contains rule tables for all types of loops. This project couldn't have happened without these rule tables*
+<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful as it contains rule tables for all types of loops. This project couldn't have happened without these rule tables*

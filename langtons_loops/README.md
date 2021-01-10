@@ -27,4 +27,4 @@ More information about Langton's Loops as well as implementation details can be 
 
 <a href='https://www.diga.me.uk/LangtonLoops.html' target='_blank'>Additional Help Site</a> *Old website with some very useful information about LL that ultimately made this project possible. Also contains an implementation of LL in LB for the six people in the world who use LB...*
 
-<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful. It contains rule tables for all types of loops. This project couldn't have happened without these rule tables*
+<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful as it contains rule tables for all types of loops. This project couldn't have happened without these rule tables*
