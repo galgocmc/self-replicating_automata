@@ -23,6 +23,6 @@ More information about Langton's Loops as well as implementation details can be 
 
 [Langton's Article (1984)](http://deepblue.lib.umich.edu/bitstream/handle/2027.42/24968/0000395.pdf?sequence=1) *Original proposition of Langton's Loops and discussion of self-replicating automata*
 
-[Langton's Loops Wikipedia](https://en.wikipedia.org/wiki/Langton%27s_loops) *Not particularily useful but contains pictures of LL and information about additional self-replicating automata*
+<a href='https://en.wikipedia.org/wiki/Langton%27s_loops' target='_blank'>Langton's Loops Wikipedia</a> *Not particularily useful but contains pictures of LL and information about additional self-replicating automata*
 
-[Additional information](https://www.diga.me.uk/LangtonLoops.html) *Old website with some very useful information about LL that ultimately made this project possible. Also contains an implementation of LL in LB for the six people in the world who use LB...*
+<a href='https://www.diga.me.uk/LangtonLoops.html' target='_blank'>Additional Help Site</a> *Old website with some very useful information about LL that ultimately made this project possible. Also contains an implementation of LL in LB for the six people in the world who use LB...*
