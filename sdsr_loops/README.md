@@ -55,4 +55,6 @@ After colliding with another loop, the agressor will begin its death. First, the
 
 Unfortunately, there isn't much information available online for SDSR loops apart from a brief mention in the Wikipedia page for Langton's Loops.
 
-[Langton's Loops Wikipedia](https://en.wikipedia.org/wiki/Langton%27s_loops) *Brief mention of SDSR Loops in the table*
+<a href='https://en.wikipedia.org/wiki/Langton%27s_loops' target='_blank'>Langton's Loops Wikipedia</a> *Brief mention of SDSR Loops in the table*
+
+<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful. It contains rule tables for all types of loops. This project couldn't have happened without these rule tables*
