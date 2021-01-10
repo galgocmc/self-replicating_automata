@@ -39,7 +39,8 @@ class cell {
     if (state == 4) return color(255, 255, 0); // yellow
     if (state == 5) return color(255, 105, 180); // pink
     if (state == 6) return color(255, 255, 255); // white
-    return color(0, 255, 255); // if state=7 cyan
+    if (state == 7) return color(0, 255, 255); // cyan
+    return color(255, 128, 0); // if state == 8 orange
   }
 
   public String toString() {
