@@ -4,9 +4,11 @@ import java.util.*;
 // SPACE  pauses/unpauses the program
 // ENTER  advances the model one iteration, only works whilst paused
 // t      toggles turbo mode- runs much faster, but makes it hard to see each individual iteration
+// s      takes a screen shot, only works whilst paused
 
 // 2d array to hold cell matrix
 cell[][] cells;
+int image_counter = 0;
 
 // holds the transition function
 // runs slower than nested ifs like in langtons loops, but if statement
@@ -231,6 +233,12 @@ void keyPressed() {
   // pauses/unpauses
   if (key == 32 /*spacebar*/) {
     pause = !pause;
+  }
+  
+  // take a screenshot
+  if (pause && key == 's') {
+    saveFrame(image_counter + ".png");
+    image_counter++;
   }
 }
 
