@@ -9,11 +9,12 @@ import java.io.*;
 // 2d array to hold cell matrix
 cell[][] cells;
 HashMap<String, Integer> trans_table;
+int image_counter = 0;
 
 // width of individual cells in the cellular automata
-int cell_width = 6;
+int cell_width = 3;
 // how many cells wide, how many cells tall
-int area_width = 225, area_height = 140;
+int area_width = 375, area_height = 275;
 
 // control variables
 boolean pause = false;
@@ -226,6 +227,12 @@ void keyPressed() {
     // program still works as intended, just has some wrong coloured cells
     if (!pause)
       display_cells(false);
+  }
+
+  // take a screenshot
+  if (pause && key == 's') {
+    saveFrame(image_counter + ".png");
+    image_counter++;
   }
 
   // pauses/unpauses
