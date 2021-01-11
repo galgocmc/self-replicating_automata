@@ -12,8 +12,6 @@ Due to its larger size, Evoloops requires much more space to operate than Langto
 
 ![Evoloops initial state](images/initial_state.png) 
 
----
-
 # Dead Bodies
 As generations pass and more loops die, occasionally parts of a loop's sheath will remain after its death. These so-called dead bodies may interfere with the reproduction of other loops.
 
