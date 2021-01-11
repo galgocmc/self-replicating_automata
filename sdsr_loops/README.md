@@ -7,7 +7,6 @@ SDSR Loops utilises 9 states, as compared to Langton's 8, with the 9th state use
 SDSR Loops begins in the same initial state as Langton's loops
 
 ![SDSR Loops initial state](images/initial_state.png) 
----
 
 ## Death
 
@@ -27,8 +26,6 @@ Immediately following a collision, a loop will begin its death. First, the exten
 
 ![](images/collision_5.png) 
 
----
-
 ### Receding
 
 ![receding](images/recede_0.png) 
@@ -39,8 +36,6 @@ Immediately following a collision, a loop will begin its death. First, the exten
 
 ![receding](images/recede_3.png) 
 
----
-
 ### Dissolution
 
 ![death](images/death_0.png) 
@@ -50,8 +45,6 @@ Immediately following a collision, a loop will begin its death. First, the exten
 ![death](images/death_2.png) 
 
 ![death](images/death_3.png)
-
----
 
 ## Sources
 
