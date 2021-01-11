@@ -11,7 +11,7 @@ This repository contains visual implementations of several self-replicating auto
 In Langton's original paper, he describes a scenario quite similar to [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life), in which cells can exists in one of two states: alive or blank. Langton poses the following qustion: if a blank cell becomes alive, does this mean that another cell has reproduced? The answer is a resounding no, as this is simply too primitive. As Langton describes, the cell is induced into a living state 'by the transition "physics"'. In order to reproduce, the copy must be 'actively directed by the configuration itself'. Read Langton's paper [here](http://deepblue.lib.umich.edu/bitstream/handle/2027.42/24968/0000395.pdf?sequence=1) for a more detailed explaination of self-replication.
 
 ## Sources
-<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful as t contains rule tables and initial configurations for all types of loops and this project` couldn't have happened without it*
+<a href='https://github.com/jimblandy/golly' target='_blank'>Rule Tables</a> *This repository was incredibly helpful as it contains rule tables and initial configurations for all types of loops and this project couldn't have happened without it*
 
 [Langton's Loops Wikipedia](https://en.wikipedia.org/wiki/Langton%27s_loops) *Not particularily useful but some information about LL as well as the subsequent loops based on LL*
 
